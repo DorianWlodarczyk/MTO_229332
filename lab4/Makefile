@@ -1,8 +1,9 @@
-SAPP=./app
+APP=./app
 all:
-    gcc main.c -o app
-    gcc unit.c -o tester
+	gcc main.c -o app
+	gcc unit.c -o tester
 tests:
-    ./tester $(APP)
+	rm output.txt 2>/dev/null
+	./tester $(APP)
 clean:
-    rm tester app
+	rm tester app

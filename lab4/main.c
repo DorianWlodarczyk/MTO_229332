@@ -12,8 +12,12 @@ int my_printf(char *format_string, char *param){
 			putchar(format_string[i]);
 			continue;
 		}
-		if((format_string[i] == '#') && (format_string[i+1] == 'g')){
+		if((format_string[i] == '#') && ((format_string[i+1] == 'g')|| format_string[i+1]=='G')){
 			i++;
+			if(format_string[i]<'0'&& format_string[i]>'9'){
+				putchar(format_string[i]);
+				continue;
+			}
 			int lenght1,temp;
 			lenght1 = strlen(format_string);
 			for(int i = 0;i<lenght1/2;i++)
@@ -21,11 +25,10 @@ int my_printf(char *format_string, char *param){
 				temp=format_string[i];
 				format_string[i]=format_string[lenght1-i-1];
 				format_string[lenght1-1-i]=temp;
-				printf("%d",format_string[i]);
+				printf("%d",param);
 			}
 			
-		}else
-			putchar(format_string[i]);
+		}
 	}
 	puts("");
 	return 0;

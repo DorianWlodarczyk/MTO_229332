@@ -3,9 +3,22 @@
 
 int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
-		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
+		if(format_string[i]!='#'){
+			putchar(format_string[i]);
+			continue;
+		}
+		if((format_string[i] == '#') && (format_string[i+1] == 'g')){
 			i++;
-			printf("%s",param);
+			int lenght1,temp;
+			lenght1 = strlen(format_string);
+			for(int i = 0;i<lenght1/2;i++)
+			{
+				temp=format_string[i];
+				format_string[i]=format_string[lenght1-i-1];
+				format_string[lenght1-1-i]=temp;
+				printf("%d",format_string[i]);
+			}
+			
 		}else
 			putchar(format_string[i]);
 	}

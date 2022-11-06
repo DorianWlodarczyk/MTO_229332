@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
+void reverse(char*string)
+{
+	int lenght =strlen(string);
+	int middle =lenght/2;
+	char temp;
+	for(int i=0;i<middle;i++)
+	{
+		temp=string[i];
+		string[i]=string[lenght-i-1];
+		string[lenght-i-1]= temp;
+	}
+}
 int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
 		if(format_string[i]!='#'){
@@ -16,18 +28,11 @@ int my_printf(char *format_string, char *param){
 			i++;
 			if(format_string[i]<'0'&& format_string[i]>'9'){
 				putchar(format_string[i]);
-				continue;
 			}
-			int lenght1,temp;
-			lenght1 = strlen(format_string);
-			for(int i = 0;i<lenght1/2;i++)
-			{
-				temp=format_string[i];
-				format_string[i]=format_string[lenght1-i-1];
-				format_string[lenght1-1-i]=temp;
-				printf("%d",param);
+			else{
+			reverse(param);
+			printf("%d",param);
 			}
-			
 		}
 	}
 	puts("");

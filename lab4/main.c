@@ -7,6 +7,11 @@ int my_printf(char *format_string, char *param){
 			putchar(format_string[i]);
 			continue;
 		}
+		if(format_string[i]=='#' && (format_string[i+1]!='g'|| format_string[i+1]!='G'))
+		{
+			putchar(format_string[i]);
+			continue;
+		}
 		if((format_string[i] == '#') && (format_string[i+1] == 'g')){
 			i++;
 			int lenght1,temp;

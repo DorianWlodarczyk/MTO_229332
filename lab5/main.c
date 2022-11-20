@@ -33,8 +33,8 @@ int my_printf(char *format_string, char *param){
 				putchar(format_string[i]);
 			}
 			else{
-			reverse(format_string);
-			printf("%d",(int)(format_string)-1);
+			reverse(param);
+			printf("%d",(param)-1);
 			}
 		}
 	}

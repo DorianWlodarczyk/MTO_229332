@@ -27,19 +27,14 @@ int my_printf(char *format_string, char *param){
 			putchar(format_string[i]);
 			continue;
 		}
-		if(format_string[i]=='#' && (format_string[i+1]!='g'|| format_string[i+1]!='G'))
-		{
-			putchar(format_string[i]);
-			continue;
-		}
-		if((format_string[i] == '#') && ((format_string[i+1] == 'g')|| format_string[i+1]=='G')){
+		if((format_string[i] == '#') && format_string[i+1]>='0'&& format_string[i+1]<='9' && ((format_string[i+2] == 'g')|| format_string[i+2]=='G')){
 			i++;
 			if(format_string[i]<'0'&& format_string[i]>'9'){
 				putchar(format_string[i]);
 			}
 			else{
-			reverse(param);
-			printf("%d",param);
+			reverse(format_string);
+			printf("%d",(int)(format_string)-1);
 			}
 		}
 	}

@@ -19,6 +19,10 @@ int my_printf(char *format_string, char *param){
 			putchar(format_string[i]);
 			continue;
 		}
+		if(format_string[i]=='#'&& (format_string[i+1]>'9'&& format_string[i+1]<'0')){
+			putchar(format_string[i]);
+			continue;
+		}
 		if(format_string[i]=='#' && (format_string[i+1]!='g'|| format_string[i+1]!='G'))
 		{
 			putchar(format_string[i]);

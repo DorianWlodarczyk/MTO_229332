@@ -7,7 +7,10 @@ def my_printf(format_string,param):
     shouldDo=True
     for idx in range(0,len(format_string)):
         if shouldDo:
-            if format_string[idx] == '#' and format_string[idx+1] == 'k':
+            if format_string[idx] == '#' and format_string[idx+1] == '.' and format_string[idc+2] == 'X' and format_string[idx+3] == 'g':
+                for j in range(0,len(format_string)):
+                    oldNumber = format_string[j]
+                    newNumber = ((oldNumber*9+1)%10)
                 print(param,end="")
                 shouldDo=False
             else:

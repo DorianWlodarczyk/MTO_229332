@@ -22,7 +22,7 @@ def my_printf(format_string,param):
                 print(format_string[idx],end="")
         else:
             shouldDo=True
-    print("")
+    print(" ")
 
 data=sys.stdin.readlines()
 

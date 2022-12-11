@@ -6,15 +6,15 @@ test2
 test3
 123456#.Xg1234
 test4
-djfjkldsjf #k jjjjjj fsfjdljfdlsj flj ldfj
+12345#.XG12345
 test5
-gjjkdsljflds #k jdlkfjdslf
+123456#.xg12345
 test6
-fjdslkfjdl #k tttttt
+1234#.Xg1234
 test7
-fjdlsjfkl #k oooolll
+12345#.XG1234
 test8
-rwrewrew #k fjdslkjfdl
+#.Xg1234
 test9
-fjdlskjfldjflj #k rewrewrew
+12345#.xg
 test10

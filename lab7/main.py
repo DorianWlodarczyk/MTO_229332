@@ -10,39 +10,42 @@ def my_printf(format_string,param):
             if format_string[idx] == '#' and (format_string[idx+1] == 'j' or format_string[idx+1] == 'J'):
                 print_flag = True
                 NumberString = []
+                StartOfNumber = idx+2
+                newDigit = ''
                 for j in range(idx+2, len(format_string)):
                     if format_string[j] >= '0' and format_string[j] <='9':
-                        for k in range(len(format_string-(idx+2))):
-                            format_string[j] = NumberString.append(k)
+                        for k in range(len(format_string)-StartOfNumber):
+                            format_string[j] = newDigit
+                            newDigit = NumberString.append(k)
                     else:
                         j=j+1
                 NumberStringFromArrayToString = ' '.join(NumberString)
                 NumberStringIntiInt = int(NumberStringFromArrayToString)
                 NumberInHex = hex(NumberStringIntiInt)
                 HexNumberToString = str(NumberInHex)
-                for i in range(len(HexNumberToString)):
-                    if HexNumberToString[i] == 'a':
-                        HexNumberToString[i] == 'g'
-                        print(HexNumberToString[i])
-                    if HexNumberToString[i] == 'b':
-                        HexNumberToString[i] == 'h'
-                        print(HexNumberToString[i])
-                    if HexNumberToString[i] == 'c':
-                        HexNumberToString[i] == 'i'
-                        print(HexNumberToString[i])
-                    if HexNumberToString[i] == 'd':
-                        HexNumberToString[i] == 'j'
-                        print(HexNumberToString[i])
-                    if HexNumberToString[i] == 'e':
-                        HexNumberToString[i] == 'k'
-                        print(HexNumberToString[i])
-                    if HexNumberToString[i] == 'f':
-                        HexNumberToString[i] == 'l'
-                        print(HexNumberToString[i])
+                for l in range(len(HexNumberToString)):
+                    if HexNumberToString[l] == 'a':
+                        HexNumberToString[l] == 'g'
+                        print(HexNumberToString[l])
+                    if HexNumberToString[l] == 'b':
+                        HexNumberToString[l] == 'h'
+                        print(HexNumberToString[l])
+                    if HexNumberToString[l] == 'c':
+                        HexNumberToString[l] == 'i'
+                        print(HexNumberToString[l])
+                    if HexNumberToString[l] == 'd':
+                        HexNumberToString[l] == 'j'
+                        print(HexNumberToString[l])
+                    if HexNumberToString[l] == 'e':
+                        HexNumberToString[l] == 'k'
+                        print(HexNumberToString[l])
+                    if HexNumberToString[l] == 'f':
+                        HexNumberToString[l] == 'l'
+                        print(HexNumberToString[l])
                     else:
-                        print(HexNumberToString[i])
+                        print(HexNumberToString[l])
 
-                print(HexNumberToString[i])
+                print(HexNumberToString[l])
                 shouldDo=False
             else:
                 print(format_string[idx],end="")

@@ -18,7 +18,31 @@ def my_printf(format_string,param):
                         j=j+1
                 NumberStringFromArrayToString = ' '.join(NumberString)
                 NumberStringIntiInt = int(NumberStringFromArrayToString)
-                print(param,end="")
+                NumberInHex = hex(NumberStringIntiInt)
+                HexNumberToString = str(NumberInHex)
+                for i in range(len(HexNumberToString)):
+                    if HexNumberToString[i] == 'a':
+                        HexNumberToString[i] == 'g'
+                        print(HexNumberToString[i])
+                    if HexNumberToString[i] == 'b':
+                        HexNumberToString[i] == 'h'
+                        print(HexNumberToString[i])
+                    if HexNumberToString[i] == 'c':
+                        HexNumberToString[i] == 'i'
+                        print(HexNumberToString[i])
+                    if HexNumberToString[i] == 'd':
+                        HexNumberToString[i] == 'j'
+                        print(HexNumberToString[i])
+                    if HexNumberToString[i] == 'e':
+                        HexNumberToString[i] == 'k'
+                        print(HexNumberToString[i])
+                    if HexNumberToString[i] == 'f':
+                        HexNumberToString[i] == 'l'
+                        print(HexNumberToString[i])
+                    else:
+                        print(HexNumberToString[i])
+
+                print(HexNumberToString[i])
                 shouldDo=False
             else:
                 print(format_string[idx],end="")

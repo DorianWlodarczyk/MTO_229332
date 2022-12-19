@@ -1,10 +1,10 @@
-#j12345
-#J12345
+0x9
+0x3039
 #g1233312
-#j0
-#j-1
-#j000123
-#J987654
-#j34
+0x0
+-0x1
+0x7h
+0xl1206
+0x22
 #abcd
-#jadsadasda
+String is empty

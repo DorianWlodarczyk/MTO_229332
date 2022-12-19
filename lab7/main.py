@@ -5,53 +5,34 @@ import sys
 def my_printf(format_string,param):
     #print(format_string)
     shouldDo=True
-    for idx in range(0,len(format_string)):
+    if len(format_string) > 0:
         if shouldDo:
-            if format_string[idx] == '#' and (format_string[idx+1] == 'j' or format_string[idx+1] == 'J'):
-                print_flag = True
-                NumberString = []
-                StartOfNumber = idx+2
-                newDigit = ''
-                for j in range(idx+2, len(format_string)):
-                    if format_string[j] >= '0' and format_string[j] <='9':
-                        for k in range(len(format_string)-StartOfNumber):
-                            format_string[j] = newDigit
-                            newDigit = NumberString.append(k)
-                    else:
-                        j=j+1
-                NumberStringFromArrayToString = ' '.join(NumberString)
-                NumberStringIntiInt = int(NumberStringFromArrayToString)
-                NumberInHex = hex(NumberStringIntiInt)
+            positionj = format_string.find("#j")
+            positionJ = format_string.find("#J")
+            if positionj != -1 or positionJ != -1:
+                positionhasz = format_string.find("#")
+                positionOfNumber = positionhasz + 2
+                NumberString = ""
+                StringNumber = ""
+                for i in range(positionOfNumber,len(format_string)):
+                        StringNumber += format_string[i]
+                StringNumberInt = int(StringNumber)
+                NumberInHex = hex(StringNumberInt)
                 HexNumberToString = str(NumberInHex)
-                for l in range(len(HexNumberToString)):
-                    if HexNumberToString[l] == 'a':
-                        HexNumberToString[l] == 'g'
-                        print(HexNumberToString[l])
-                    if HexNumberToString[l] == 'b':
-                        HexNumberToString[l] == 'h'
-                        print(HexNumberToString[l])
-                    if HexNumberToString[l] == 'c':
-                        HexNumberToString[l] == 'i'
-                        print(HexNumberToString[l])
-                    if HexNumberToString[l] == 'd':
-                        HexNumberToString[l] == 'j'
-                        print(HexNumberToString[l])
-                    if HexNumberToString[l] == 'e':
-                        HexNumberToString[l] == 'k'
-                        print(HexNumberToString[l])
-                    if HexNumberToString[l] == 'f':
-                        HexNumberToString[l] == 'l'
-                        print(HexNumberToString[l])
-                    else:
-                        print(HexNumberToString[l])
-
-                print(HexNumberToString[l])
+                HexNumberToString= HexNumberToString.replace("a", "g")
+                HexNumberToString= HexNumberToString.replace("b", "h")
+                HexNumberToString= HexNumberToString.replace("c", "i")
+                HexNumberToString= HexNumberToString.replace("d", "j")
+                HexNumberToString= HexNumberToString.replace("e", "k")
+                HexNumberToString= HexNumberToString.replace("f", "l")
+                print(HexNumberToString)
                 shouldDo=False
             else:
-                print(format_string[idx],end="")
+                print(format_string)
         else:
             shouldDo=True
-    print("")
+    else:
+        print("String is empty")
 
 data=sys.stdin.readlines()
 

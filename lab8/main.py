@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 
 import sys
+import re
 
 def my_printf(format_string,param):
     #print(format_string)
     shouldDo=True
     if len(format_string) > 0:
         if shouldDo:
-            positionj = format_string.find("#j")
+            matchcode = re.findall(r"\#\.\d+\j")
             positionJ = format_string.find("#J")
-            if positionj != -1 or positionJ != -1:
+            if matchcode:
                 positionhasz = format_string.find("#")
-                positionOfNumber = positionhasz + 2
+                positionOfNumber = positionhasz + 4
                 NumberString = ""
                 StringNumber = ""
                 for i in range(positionOfNumber,len(format_string)):
